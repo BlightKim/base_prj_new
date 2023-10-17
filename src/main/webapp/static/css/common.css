@@ -1,0 +1,374 @@
+@charset "UTF-8";
+/* font */
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap"); /* Noto Sans KR */
+@font-face {
+  font-family: "SUIT-Regular";
+  src: url("./font/SUIT-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+body * {
+  font-family: "Noto Sans KR", serif;
+}
+
+/* common */
+.wrap {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.flex_wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mo_only {
+  display: none !important;
+}
+
+.flex_left {
+  display: flex;
+}
+
+.align-center {
+  align-items: center;
+}
+
+input {
+  width: 100%;
+  height: 32px;
+  border: 1px solid #C8C8C8;
+  padding: 0 12px;
+}
+input::placeholder {
+  color: #949494;
+}
+
+select {
+  width: 100%;
+  height: 32px;
+  border: 1px solid #C8C8C8;
+  padding: 0 12px;
+}
+
+.btn {
+  margin-top: 16px;
+  text-align: right;
+  display: flex;
+  align-items: center;
+  justify-content: right;
+}
+.btn a,
+.btn button {
+  background: #23293C;
+  display: inline-block;
+  width: fit-content;
+  padding: 0px 24px;
+  box-sizing: border-box;
+  color: #fff;
+  font-size: 15px;
+  height: 43px;
+  line-height: 43px;
+}
+.btn button:nth-child(n+2),
+.btn a:nth-child(n+2) {
+  margin-left: 5px;
+}
+.btn .primary {
+  background: #5A7EE7;
+}
+.btn .white {
+  background: #fff;
+  color: #23293C;
+  border: 1px solid #A7A9B1;
+}
+
+.boardPager {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pc_num {
+  margin-right: 12px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.boardPager ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.boardPager ul li {
+  margin: 0 0.1875rem;
+}
+
+.boardPager ul li.mobile_num {
+  display: none;
+}
+
+.boardPager ul li {
+  display: inline-block;
+  vertical-align: middle;
+  text-align: center;
+  color: #9f9f9f;
+  font-size: 0.75rem;
+  font-weight: 700;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 28px;
+  height: 28px;
+  border: none;
+  background: #FFFFFF;
+  border: 1px solid #DFE3E8;
+  flex: none;
+}
+
+.boardPager ul li a {
+  display: inline-block;
+  font-size: 0.875rem;
+  width: 28px;
+  height: 28px;
+  line-height: 28px;
+  color: #666666;
+  font-weight: 500;
+}
+
+.boardPager ul li.pager {
+  position: relative;
+}
+
+.boardPager ul li.pager a img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* width: 6px; */
+}
+
+.boardPager ul li.pagerNum.on {
+  background: rgba(255, 255, 255, 0);
+}
+
+.boardPager ul li.pagerNum.on a {
+  background: #111;
+  color: #fff;
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+}
+
+.boardPager ul li.pagerNum {
+  border: none;
+}
+
+/* 라디오 */
+input[type=radio] {
+  display: none;
+}
+
+input[type=radio] + label.radio_style1 {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+  margin-right: 15px;
+  font-size: 16px;
+}
+
+input[type=radio] + label.radio_style1:before {
+  content: "";
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  margin-right: 10px;
+  background-color: #fff;
+  border-radius: 2px;
+  background: url("../images/radio_off.png");
+}
+
+input[type=radio]:checked + label.radio_style1:before {
+  content: "";
+  width: 22px;
+  height: 22px;
+  background: url("../images/radio_on.png");
+}
+
+/* 체크박스 */
+input[type=checkbox] {
+  display: none;
+}
+
+input[type=checkbox] + label.check_style1 {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+  font-size: 16px;
+}
+
+input[type=checkbox] + label.check_style1::before {
+  content: "";
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  margin-right: 10px;
+  background-color: #fff;
+  border-radius: 2px;
+  background: url("../images/check_off.svg");
+}
+
+input[type=checkbox]:checked + label.check_style1::before {
+  content: "";
+  width: 16px;
+  height: 16px;
+  background: url("../images/check_on.svg");
+}
+
+/* header */
+/* footer */
+/* modal */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  z-index: 100;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal_open {
+  cursor: pointer;
+}
+
+.modal_overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 24;
+}
+
+.modal_content {
+  background-color: white;
+  text-align: left;
+  position: relative;
+  z-index: 25;
+  border-radius: 8px;
+  box-shadow: 0.125rem 0.125rem 1.25rem 0.25rem rgba(0, 0, 0, 0.2);
+}
+
+.modal_content .modalContWrap {
+  font-size: 0.9375rem;
+}
+
+.modal .modal_close {
+  position: absolute;
+  z-index: 50;
+  right: 1.0625rem;
+  top: 1.0625rem;
+  cursor: pointer;
+}
+
+.modal .modal_close img {
+  width: 1.8125rem;
+}
+
+.modal_content .modalContWrap {
+  font-size: 1.125rem;
+  color: #000;
+}
+
+.modal .modal_close img {
+  width: 1.8125rem;
+}
+
+.modal_content .modalContWrapTab {
+  text-align: left;
+}
+
+.modal_content .modal_scroll {
+  height: 31.25rem;
+  overflow-y: scroll;
+}
+
+.modal_md {
+  width: 46.25rem;
+  max-height: 40.625rem;
+  box-sizing: border-box;
+}
+
+.modal_md .modal_con {
+  padding: 30px 24px;
+  font-size: 15px;
+  box-sizing: border-box;
+}
+
+.modal_sm {
+  width: 300px;
+  text-align: center;
+}
+
+.modal_sm .modal_con {
+  padding: 30px;
+  font-size: 15px;
+}
+
+.modal_btn {
+  border-top: 1px solid #eeeeee;
+}
+
+.modal_btn.flex {
+  display: flex;
+}
+
+.modal_btn button {
+  color: #999999;
+  font-size: 15px;
+  width: 100%;
+  height: 40px;
+}
+
+@media screen and (max-width: 750px) {
+  .mo_only {
+    display: block !important;
+  }
+  .pc_only {
+    display: none !important;
+  }
+  .boardPager {
+    margin-top: 24px;
+    display: block;
+  }
+  .boardPager .pc_num {
+    display: none;
+  }
+  .boardPager ul {
+    justify-content: space-between;
+  }
+  .boardPager ul li.mobile_num {
+    display: block;
+    border: none;
+    width: auto;
+  }
+  .boardPager ul li.mobile_num a {
+    font-size: 15px;
+  }
+  .boardPager ul li.mobile_num a span {
+    color: #5384ED;
+    font-weight: 700;
+  }
+  .boardPager ul li.pagerNum {
+    display: none;
+  }
+}/*# sourceMappingURL=common.css.map */
